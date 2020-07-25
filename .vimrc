@@ -5,13 +5,13 @@ set nocompatible
 filetype off
 
 " plugins
-" add here
+execute pathogen#infect()
 
 " load plugins
+syntax on
 filetype plugin indent on
 
 " basic settings
-syntax on
 set number
 set encoding=utf-8
 set shell=/usr/bin/zsh
@@ -64,5 +64,4 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " appearance
-" colorscheme coklorscheme_name
-set background=dark
+colorscheme molokai
