@@ -7,6 +7,10 @@ filetype off
 " plugins
 execute pathogen#infect()
 
+" read file if changed outside
+set autoread
+au FocusGained,BufEnter * checktime
+
 " load plugins
 syntax on
 filetype plugin indent on
@@ -15,28 +19,50 @@ filetype plugin indent on
 set number
 set encoding=utf-8
 set shell=/usr/bin/zsh
-set spell spelllang=en_us
 set hidden
+set cmdheight=1
+
+" autocompletion
+set wildmenu
 
 " file stats
 set ruler
 
 " spacing
 set wrap
-set textwidth=79
 set textwidth=119
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set autoindent
+set smartindent
 set scrolloff=10
 " only use space (no tab characters)
 set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" matching brackets
+set showmatch
+set mat=2
+
+" searching
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" stop redraw while exec macros
+set lazyredraw
 
 " rendering 
 set ttyfast
 
-" status bar?
+" spelling
+set spell spelllang=en_us
+" ss toggles spellcheck
+map <leader>ss :setlocal spell!<cr>
+
+" status bar
 set laststatus=2
 
 " last line
@@ -47,11 +73,10 @@ set showcmd
 set mouse=a
 
 " hotkeys
-let mapleader=","
+let mapleader=" "
+nmap <leader>w :w!<cr>
 inoremap jj <ESC>
 
-" custom shortcuts
-" add here
 
 " disable arrow keys
 nnoremap <up> <nop>
