@@ -261,9 +261,17 @@ set nocompatible
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
         \   'right': [ [ 'percent' ], [ 'lineinfo' ], [ 'fileformat' ],
         \              [ 'fileencoding' ] ]
-        \ },
+        \},
         \ 'component_function': {
         \   'gitbranch': 'gitbranch#name'
+        \},
+        \   'tab': {
+        \       'active': [ 'filename', 'modified' ],
+        \       'inactive': [ 'filename', 'modified' ],
+        \},
+        \ 'tabline': {
+        \   'left': [ [ 'tabs' ] ],
+        \   'right': [ [ 'close' ] ]
         \}
     \}
 " }}}
