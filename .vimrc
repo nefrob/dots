@@ -36,6 +36,8 @@ set nocompatible
     Plug 'moll/vim-bbye'
     " Faster jumping around 
     Plug 'justinmk/vim-sneak'
+    " Tmux same key navigation
+    Plug 'christoomey/vim-tmux-navigator'
 
     call plug#end()
 " }}}
