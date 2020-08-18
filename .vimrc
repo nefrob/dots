@@ -214,33 +214,42 @@ set nocompatible
 
     nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr> " strip trailing whitespace
 
-    " nmap <silent> gTT :tab sb<cr> " open current buffer in new tab
-    " tab navigation
-    "map <leader>tn :tabnew<cr>
-    "map <leader>tc :tabclose<cr>
-    "map <leader>tt :tabnext<cr>
-    "map <leader>tm :tabmove
-    " toggle between this and the last accessed tab
-    "let g:lasttab = 1
-    "nmap <lLeader>tl :exe "tabn ".g:lasttab<CR>
-    "au TabLeave * let g:lasttab = tabpagenr()
+    " Tab navigation
+    map <leader>tn :tabnew<cr>
+    map <leader>tc :tabclose<cr>
+    map <leader>tt :tabnext<cr>
+    map <leader>tp :tabprev<cr>
+    map <leader>tm :tabmove
+    " Provide buffer number to open in new tab
+    nmap <leader>tb :tab sb
+    
+    " Toggle between this and the last accessed tab
+    let g:lasttab = 1
+    nmap <leader>tl :exe "tabn ".g:lasttab<CR>
+    au TabLeave * let g:lasttab = tabpagenr()
 
     " opens a new tab with the current buffer's path
     "map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-    " switch cwd to the directory of the open buffer
+    " Switch cwd to the directory of the open buffer
     "map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-    " window navigation
-    "map <C-j> <C-W>j
-    "map <C-k> <C-W>k
-    "map <C-h> <C-W>h
-    "map <C-l> <C-W>l
+    " Window navigation
+    map <C-j> <C-w>j
+    map <C-k> <C-w>k
+    map <C-h> <C-w>h
+    map <C-l> <C-w>l
+    map <leader>sv :vsplit
+    map <leader>sh :split
+
+    " Buffer navigation
+    map <leader>bn :bnext<cr>
+    map <leader>bp :bprevious<cr>
+    map <leader>bb :buffers<cr>
+    map <leader>bs :b
     " Close the current buffer
-    "map <leader>bd :Bclose<cr>:tabclose<cr>gT
+    map <leader>bd :bd<cr>
     " Close all the buffers
-    "map <leader>ba :bufdo bd<cr>
-    "map <leader>l :bnext<cr>
-    "map <leader>h :bprevious<cr>
+    map <leader>ba :bufdo bd<cr>
 
     " Disable arrow keys
     nnoremap <up> <nop>
@@ -261,14 +270,14 @@ set nocompatible
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
         \   'right': [ [ 'percent' ], [ 'lineinfo' ], [ 'fileformat' ],
         \              [ 'fileencoding' ] ]
-        \},
+        \ },
         \ 'component_function': {
         \   'gitbranch': 'gitbranch#name'
         \},
         \   'tab': {
         \       'active': [ 'filename', 'modified' ],
         \       'inactive': [ 'filename', 'modified' ],
-        \},
+        \   },
         \ 'tabline': {
         \   'left': [ [ 'tabs' ] ],
         \   'right': [ [ 'close' ] ]
