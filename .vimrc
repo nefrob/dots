@@ -172,7 +172,7 @@ set nocompatible
     map <leader>l :set list!<cr> " toggle invisible chars
 
     " Spell check toggle and remaps
-    nnoremap <silent> <leader>s :setlocal spell!<cr>
+    nnoremap <silent> <leader><leader>s :setlocal spell!<cr>
     map <leader>sn ]s " next mispelled
     map <leader>sp [s " previous mispelled
     map <leader>sg zg " add to dict (good)
@@ -203,8 +203,8 @@ set nocompatible
     nnoremap <silent> $ g$
 
     " Scroll faster
-    nnoremap <S-j> 4<C-e>
-    nnoremap <S-k> 4<C-y>
+    nnoremap <S-j> 3<C-e>
+    nnoremap <S-k> 3<C-y>
 
     " Line movement
     nnoremap <leader>e $
@@ -250,10 +250,7 @@ set nocompatible
     " Close the current buffer
     map <leader>bd :Bdelete<cr>
     " Close all the buffers
-    map <leader>ba :bufdo bd<cr>
-
-    " Session management
-    nnoremap <leader>ss :mksession ~/.vim/sessions/
+    map <leader>ba :bufdo Bdelete<cr>
 
     " Disable arrow keys
     nnoremap <up> <nop>
@@ -339,6 +336,8 @@ set nocompatible
     let g:startify_custom_header = g:ascii
     let g:startify_relative_path = 1
     let g:startify_use_env = 1
+    let g:startify_session_persistence = 1
+    let g:startify_session_delete_buffers = 1
 
     " Custom startup list, only show MRU from current directory/project
     let g:startify_lists = [
@@ -359,6 +358,10 @@ set nocompatible
     \ ]
 
     nmap <leader>st :Startify<cr>
+    " Session management
+    nnoremap <leader>ss :SSave!
+    nnoremap <leader>sd :SDelete!
+    nnoremap <leader>sc :SClose
 " }}}
 
 " VIMRC {{{

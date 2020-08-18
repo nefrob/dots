@@ -3,3 +3,6 @@ plugged/*
 
 # Ignore spelling
 spell/*
+
+# Ignore sessions
+session/*
