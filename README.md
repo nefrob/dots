@@ -1,4 +1,4 @@
-# VIM settings
+# Dot file configurations
 
 ## Setup
 
