@@ -358,7 +358,9 @@ set nocompatible
     \ ]
 
     let g:startify_bookmarks = [
-        \ { 'c': '~/.vim/.vimrc' }
+        \ { 'c': '~/.vim/.vimrc' },
+        \ { 'z': '~/.zshrc' },
+        \ { 't': '~/.tmux.conf' }
     \ ]
 
     nmap <leader>st :Startify<cr>

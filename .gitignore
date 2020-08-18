@@ -1,8 +1,11 @@
+# VIM
 # Ignore plugins
-plugged/*
-
+.vim/plugged/*
 # Ignore spelling
-spell/*
-
+.vim/spell/*
 # Ignore sessions
-session/*
+.vim/session/*
+
+# TMUX
+.tmux/plugins/*
+!.tmux/plugins/tpm
