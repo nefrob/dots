@@ -26,4 +26,7 @@ On linux of WSL:
 
 - For further info on [vim-plug](https://github.com/junegunn/vim-plug/).
 
-- For further info on [tpm](https://github.com/tmux-plugins/tpm).
+- For further info on [tpm](https://github.com/tmux-plugins/tpm). To update `tpm` do:
+  ```
+  git submodule foreach git pull origin master
+  ```
