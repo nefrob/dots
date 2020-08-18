@@ -32,6 +32,8 @@ set nocompatible
     Plug 'jbgutierrez/vim-better-comments'
     " Better startup screen
     Plug 'mhinz/vim-startify'
+    " Buffer delete doesn't close window
+    Plug 'moll/vim-bbye'
 
     call plug#end()
 " }}}
@@ -191,7 +193,6 @@ set nocompatible
     inoremap <C-c> <Esc>
     imap <leader>w <C-c>:w!<cr>
     nmap <leader>q :q<cr>
-    nnoremap <leader>bd :bd<cr> " close current buffer
 
     nnoremap <leader>c :set cursorline!<cr> " toggle cursor line
 
@@ -247,9 +248,12 @@ set nocompatible
     map <leader>bb :buffers<cr>
     map <leader>bs :b
     " Close the current buffer
-    map <leader>bd :bd<cr>
+    map <leader>bd :Bdelete<cr>
     " Close all the buffers
     map <leader>ba :bufdo bd<cr>
+
+    " Session management
+    nnoremap <leader>ss :mksession ~/.vim/sessions/
 
     " Disable arrow keys
     nnoremap <up> <nop>
