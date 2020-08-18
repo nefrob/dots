@@ -34,6 +34,8 @@ set nocompatible
     Plug 'mhinz/vim-startify'
     " Buffer delete doesn't close window
     Plug 'moll/vim-bbye'
+    " Faster jumping around 
+    Plug 'justinmk/vim-sneak'
 
     call plug#end()
 " }}}
@@ -194,7 +196,7 @@ set nocompatible
     imap <leader>w <C-c>:w!<cr>
     nmap <leader>q :q<cr>
 
-    nnoremap <leader>c :set cursorline!<cr> " toggle cursor line
+    nnoremap <leader><leader>c :set cursorline!<cr> " toggle cursor line
 
     " Ensure move works on wrapped lines
     nnoremap <silent> j gj
@@ -362,6 +364,17 @@ set nocompatible
     nnoremap <leader>ss :SSave!
     nnoremap <leader>sd :SDelete!
     nnoremap <leader>sc :SClose
+" }}}
+
+" Commentary {{{
+    nnoremap <leader>c :Commentary<cr>
+    vnoremap <leader>c :Commentary<cr>
+" }}}
+
+" Sneak {{{
+    let g:sneak#label = 1 " label mode (easymotion alternative)
+    let g:sneak#s_next = 1 " next search result with s
+    let g:sneak#prompt = '🔎'
 " }}}
 
 " VIMRC {{{
