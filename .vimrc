@@ -359,5 +359,5 @@ set nocompatible
 
 " VIMRC {{{
     nnoremap <silent> <leader>ev :e $MYVIMRC<CR> " edit vimrc
-    nnoremap <silent> <leader>sv :so $MYVIMRC<CR> " reload vimrc
+    nnoremap <silent> <leader>vv :so $MYVIMRC<CR> " reload vimrc
 " }}}
