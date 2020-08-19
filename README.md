@@ -6,7 +6,7 @@ On linux of WSL:
  - Install `zsh` per `oh-my-zsh` [instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
  - Install `oh-my-zsh` per [GitHub page](https://github.com/ohmyzsh/ohmyzsh).
 
-- Clone this repository:
+- Clone repo and link files:
 
   ```
   git clone https://github.com/nefrob/dots.git ~/.dots
