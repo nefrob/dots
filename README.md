@@ -15,12 +15,12 @@ On linux of WSL:
 
   ln -s ~/.dots/.zshrc ~/.zshrc
 
-  ln -s .vim ~/.vim
+  ln -s ~/.dots/.vim ~/.vim
   ln -s ~/.dots/.vim/.vimrc ~/.vimrc
   vi +PlugInstall +qall
 
   ln -s ~/.dots/.tmux ~/.tmux
-  ln -s .tmux/.tmux.conf ~/.tmux.conf
+  ln -s ~/.dots/.tmux/.tmux.conf ~/.tmux.conf
   ```
 - Install `tpm` plugins via `<C-a>I` with `tmux` running.
 
