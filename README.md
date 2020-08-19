@@ -9,24 +9,28 @@ On linux of WSL:
 - Clone this repository:
 
   ```
-  git clone https://github.com/nefrob/dots.git
+  git clone https://github.com/nefrob/dots.git ~/.dots
   cd dots
   git submodule update --init
 
-  ln -s .vim/.vimrc ~/.vimrc
+  ln -s ~/.dots/.zshrc ~/.zshrc
+
   ln -s .vim ~/.vim
+  ln -s ~/.dots/.vim/.vimrc ~/.vimrc
   vi +PlugInstall +qall
 
+  ln -s ~/.dots/.tmux ~/.tmux
   ln -s .tmux/.tmux.conf ~/.tmux.conf
-  ln -s .tmux ~/.tmux
   ```
 - Install `tpm` plugins via `<C-a>I` with `tmux` running.
 
-- Make sure you are using a power line enabled font, ex [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases).
+- Make sure you are using a power line enabled font, ex. [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases).
 
-- For further info on [vim-plug](https://github.com/junegunn/vim-plug/).
+-  To update `tpm` do:
+    ```
+    git submodule foreach git pull origin master
+    ```
 
-- For further info on [tpm](https://github.com/tmux-plugins/tpm). To update `tpm` do:
-  ```
-  git submodule foreach git pull origin master
-  ```
+- Further info on [vim-plug](https://github.com/junegunn/vim-plug/).
+
+- Further info on [tpm](https://github.com/tmux-plugins/tpm). 
