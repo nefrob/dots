@@ -2,17 +2,24 @@
 
 ## Setup
 
-On linux of WSL:
+On WSL (similar for linux):
  - Install `zsh` per `oh-my-zsh` [instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
  - Install `oh-my-zsh` per [GitHub page](https://github.com/ohmyzsh/ohmyzsh).
 
 - Clone repo and link files:
 
   ```
+  # Clone repos
   git clone https://github.com/nefrob/dots.git ~/.dots
   cd dots
   git submodule update --init
 
+  # Needed for Coc
+  sudo apt update
+  sudo apt install nodejs
+  sudo apt install npm
+
+  # Link config files to home directory
   ln -s ~/.dots/.zshrc ~/.zshrc
 
   ln -s ~/.dots/.vim ~/.vim
@@ -30,6 +37,30 @@ On linux of WSL:
     ```
     git submodule foreach git pull origin master
     ```
+
+- Install `coc` extensions via `:CocInstall coc-extension-name` in `vim`. 
+
+  To use `coc-clangd` you need `clangd` in your path. If not present get via either:
+
+  ```
+  :CocCommand clangd.install
+  ```
+
+  or
+
+  ```
+  sudo apt-get install clangd
+  ```
+
+  To get `clangd` completion for project files do:
+
+  ```
+  cd build
+  cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+  ln -s project_path/build/compile_commands.json project_path/compile_commands.json
+  ```
+
+  See [here](https://clangd.llvm.org/installation.html#project-setup) for more info.
 
 - Further info on [vim-plug](https://github.com/junegunn/vim-plug/).
 
