@@ -120,7 +120,7 @@ set nocompatible
     set background=dark
     "let g:onedark_termcolors=16
     "let g:onedark_terminal_italics=1
-    colorscheme nord " scheme
+    colorscheme onedark " scheme
 " }}}
 
 " Formatting {{{
