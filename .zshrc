@@ -72,6 +72,9 @@ plugins=(git sudo ubuntu zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
+# export TERM=screen-256color
+# export TERM=tmux-256color
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

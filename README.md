@@ -31,7 +31,7 @@ On WSL (similar for linux):
   ```
 - Install `tpm` plugins via `<C-a>I` with `tmux` running.
 
-- Make sure you are using a power line enabled font, ex. [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases).
+- Make sure you are using a power line enabled font (preferably nerd-font patched for additional glyphs) ex. [CaskaydiaCode](https://github.com/ryanoasis/nerd-fonts/releases/).
 
 -  To update `tpm` do:
     ```

@@ -10,6 +10,7 @@ set nocompatible
     " Themes
     Plug 'joshdick/onedark.vim'
     Plug 'ueaner/molokai'
+    Plug 'arcticicestudio/nord-vim'
     " Enhanced status bar
     Plug 'itchyny/lightline.vim'
     " Get git branch
@@ -57,6 +58,7 @@ set nocompatible
     set encoding=utf-8
     set nomodeline " security, disable mode lines
     set spell spelllang=en_us
+    set nospell
     if has('mouse')
         set mouse=a
     endif
@@ -87,8 +89,25 @@ set nocompatible
     set signcolumn=yes " for gitgutter
     set shortmess+=c
     set numberwidth=4
-    set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:· " spacing chars visible 
+    set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:· " spacing chars visible
+
+    set term=screen-256color
     set t_Co=256 " tell vim terminal supports 256 colors
+
+    if &term =~ '256color'
+        " Disable background color erase
+        set t_ut=
+    endif
+
+    " enable 24 bit color support if supported
+    if (has("termguicolors"))
+        if (!(has("nvim")))
+            let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+            let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        endif
+        set termguicolors
+    endif
+
     " insert mode = line cursor, normal mode = block cursor
     set guicursor=n-v-c:block-Cursor
     set guicursor+=i:ver100-iCursor
@@ -98,7 +117,10 @@ set nocompatible
     set splitbelow " horizontal splits new window below
     set splitright " vertical splits new window to right
 
-    colorscheme onedark " scheme
+    set background=dark
+    "let g:onedark_termcolors=16
+    "let g:onedark_terminal_italics=1
+    colorscheme nord " scheme
 " }}}
 
 " Formatting {{{
