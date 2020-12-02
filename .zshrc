@@ -103,5 +103,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias c=clear
 alias sz='source ~/.zshrc'
+alias e=explorer.exe
 
 cd /mnt/f/ 

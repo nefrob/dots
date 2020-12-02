@@ -134,7 +134,7 @@ set nocompatible
     set shiftround " indent rounded to multiple of tab width
     set expandtab " use spaces instead of tabs
     set backspace=eol,start,indent " backspace no space-wise
-    set textwidth=119 " max text width
+    set textwidth=99 " max text width
     set scrolloff=1 " lines off edge of screen to keep
 
     " Tab movement
@@ -234,14 +234,14 @@ set nocompatible
 
     " Scroll faster
     nnoremap <S-j> 3<C-e>
-    nnoremap <S-k> 3<C-y>
+    nnoremap <S-k> 3<C-y> " TODO: fix, opens man page right now
 
     " Line movement
     nnoremap <leader>e $
     nnoremap <leader>ye y$
     nnoremap <leader>de d$
     nnoremap <leader>f ^
-    nnoremap <leader>r <C-r
+    nnoremap <leader>r <C-r>
 
     nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr> " strip trailing whitespace
 
