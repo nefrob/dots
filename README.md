@@ -5,13 +5,17 @@
 On WSL (similar for linux):
  - Install `zsh` per `oh-my-zsh` [instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
  - Install `oh-my-zsh` per [GitHub page](https://github.com/ohmyzsh/ohmyzsh).
+ - Install `git`: `sudo apt install git`.
+ - Install `vim`: `sudo apt install vim`.
+ - Install `tmux`: `sudo apt install tmux`.
+  
 
 - Clone repo and link files:
 
   ```
   # Clone repos
   git clone https://github.com/nefrob/dots.git ~/.dots
-  cd dots
+  cd .dots
   git submodule update --init
 
   # Needed for Coc
