@@ -234,13 +234,13 @@ set nocompatible
 
     " Scroll faster
     nnoremap <S-j> 3<C-e>
-    nnoremap <S-k> 3<C-y> " TODO: fix, opens man page right now
+    nnoremap <S-k> 3<C-y>
 
     " Line movement
     nnoremap <leader>e $
     nnoremap <leader>ye y$
     nnoremap <leader>de d$
-    nnoremap <leader>f ^
+    nnoremap <leader>sf ^
     nnoremap <leader>r <C-r>
 
     nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr> " strip trailing whitespace
@@ -460,7 +460,7 @@ set nocompatible
     nmap <silent> gr <Plug>(coc-references)
 
     " Use K to show documentation in preview window.
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    nnoremap <silent> <leader>k :call <SID>show_documentation()<CR>
 
     function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
