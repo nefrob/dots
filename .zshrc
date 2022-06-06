@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/nefrob/.oh-my-zsh"
+export ZSH="/Users/nefrob/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="arrow" # bira, agnoster, arrow
+ZSH_THEME="kolo" #jnrowe, kolo,  bira, agnoster, arrow
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,7 @@ ZSH_THEME="arrow" # bira, agnoster, arrow
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo ubuntu zsh_reload)
+plugins=(git sudo macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,7 +103,15 @@ source $ZSH/oh-my-zsh.sh
 
 alias c=clear
 alias sz='source ~/.zshrc'
+alias tilt='cd ~/Documents/Code/Tilt/tilt-repo && activate'
+alias activate='source env/bin/activate'
+alias lines='git ls-files | xargs wc -l'
 
 # WSL specific commands
 # alias e=explorer.exe
 # cd /mnt/f/ 
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
