@@ -110,7 +110,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias c=clear
-alias sz='source ~/.zshrc'
+alias sz='source ${ZDOTDIR:-~}/.zshrc'
 # alias lines='git ls-files | xargs wc -l'
 
-# TODO delete this and re-add via setup?
+# Auto appended values
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

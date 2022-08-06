@@ -1,8 +1,6 @@
 # zsh
-.zsh/.zshenv
-.zsh/.zprofile
-.zsh/.zlogin
-.zsh/.zlogout
+.zsh/*
+!.zsh.zshrc
 
 # vim
 .vim/plugged/*
