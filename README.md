@@ -1,5 +1,10 @@
 # Dot file configurations
 
+https://brew.sh/
+xcode-select --install
+brew bundle --file=Brewfile --no-lock --no-upgrade
+
+
 ## Setup
 
 On WSL (similar for linux):
