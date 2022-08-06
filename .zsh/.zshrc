@@ -8,7 +8,9 @@ export ZSH="/Users/nefrob/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="kolo" #jnrowe, kolo,  bira, agnoster, arrow
+ZSH_THEME="kolo" 
+# Other themes I like:
+#jnrowe, kolo,  bira, agnoster, arrow
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +70,13 @@ ZSH_THEME="kolo" #jnrowe, kolo,  bira, agnoster, arrow
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo macos)
+plugins=(
+  git 
+  sudo 
+  macos
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,16 +110,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias c=clear
-alias sz='source ~/.zshrc'
-alias tilt='cd ~/Documents/Code/Tilt/tilt-repo && activate'
-alias activate='source env/bin/activate'
-alias lines='git ls-files | xargs wc -l'
+alias sz='source ${ZDOTDIR:-~}/.zshrc'
+# alias lines='git ls-files | xargs wc -l'
 
-# WSL specific commands
-# alias e=explorer.exe
-# cd /mnt/f/ 
+# Auto appended values
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

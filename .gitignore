@@ -1,12 +1,24 @@
-# VIM
-# Ignore plugins
+# zsh
+.zsh/*
+!.zsh.zshrc
+
+# vim
 .vim/plugged/*
-# Ignore spelling
 .vim/spell/*
-# Ignore sessions
 .vim/session/*
 
-# TMUX
+# neovim
+
+# tmux
 .tmux/plugins/*
 !.tmux/plugins/tpm
 .tmux/resurrect/*
+
+# node
+.tool-versions
+
+# python
+.python-version
+
+# direnv
+.envrc
