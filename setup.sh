@@ -30,7 +30,6 @@ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
 source ${ZDOTDIR:-~}/.zshrc
 
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-
 just node-install
 
 # Setup pyenv for managing different versions of python
@@ -42,8 +41,6 @@ echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ${Z
 echo 'eval "$(pyenv init -)"' >> ${ZDOTDIR:-~}/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ${ZDOTDIR:-~}/.zshrc
 source ${ZDOTDIR:-~}/.zshrc
-# reload shell since path was updated
-exec "$SHELL"
 
 just pyenv-install
 
@@ -56,6 +53,14 @@ ln -s "$(pwd)/.vim/.vimrc" $HOME/.vimrc
 just vim-plugin-install
 echo "Read more on plugin management here: https://github.com/junegunn/vim-plug/"
 
+# Link nvim dotfiles
+
+ln -s "$(pwd)/nvim" $HOME/.config/nvim
+ln -s "$(pwd)/.vim/.vimrc" "$(pwd)/nvim/init.vim"
+mkdir $HOME/.local/share/nvim/site/
+ln -s "$(pwd)/.vim/autoload" $HOME/.local/share/nvim/site/autoload
+just nvim-plugin-install
+
 # Link tmux dot files
 
 echo "Setting up tmux"
@@ -64,3 +69,6 @@ ln -s "$(pwd)/.tmux" $HOME/.tmux
 ln -s "$(pwd)/.tmux/.tmux.conf" $HOME/.tmux.conf
 echo "Install plugins via \`prefix\` + \`I\` with tmux running."
 echo "Read more here: https://github.com/tmux-plugins/tpm"
+
+# reload shell since path was updated
+exec "$SHELL"

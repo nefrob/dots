@@ -44,7 +44,9 @@
 
 # neovim
 
-# TODO add neovim setup
+# Install nvim plugins
+@nvim-plugin-install:
+    nvim +PlugInstall +qall
 
 # tmux
 

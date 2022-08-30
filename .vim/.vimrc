@@ -11,6 +11,7 @@ set nocompatible
     Plug 'joshdick/onedark.vim'
     Plug 'ueaner/molokai'
     Plug 'arcticicestudio/nord-vim'
+    Plug 'dracula/vim'
     " Enhanced status bar
     Plug 'itchyny/lightline.vim'
     " Get git branch
@@ -74,7 +75,7 @@ set nocompatible
 
 " Appearance {{{
     syntax on
-    filetype plugin indent on
+    filetype plugin indent on " file type contextual indent
     set number " show line numbers
     set relativenumber " relative line numbers
     set ruler " always show cursor position
@@ -83,15 +84,17 @@ set nocompatible
     set ttyfast "faster redraw
     set laststatus=2 " last status line
     set cmdheight=2 " command bar height
-    set title " terminal title
+    set title " file title
     set showmatch " matching braces
     set mat=2 " blink time (tenths of sec)
     set signcolumn=yes " for gitgutter
     set shortmess+=c
     set numberwidth=4
     set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:· " spacing chars visible
+    set cc=120 " 120 char column border
 
-    set term=screen-256color
+    " Is this needed?
+    "  set term=xterm-256color
     set t_Co=256 " tell vim terminal supports 256 colors
 
     if &term =~ '256color'
@@ -120,7 +123,7 @@ set nocompatible
     set background=dark
     "let g:onedark_termcolors=16
     "let g:onedark_terminal_italics=1
-    colorscheme onedark " scheme
+    colorscheme dracula " scheme
 " }}}
 
 " Formatting {{{
@@ -385,7 +388,7 @@ set nocompatible
 
     let g:startify_bookmarks = [
         \ { 'c': '~/.vim/.vimrc' },
-        \ { 'z': '~/.zshrc' },
+        \ { 'z': '~/.zsh/.zshrc' },
         \ { 't': '~/.tmux.conf' }
     \ ]
 
@@ -409,12 +412,10 @@ set nocompatible
 
 " Coc {{{
     let g:coc_global_extensions = [
-        \ 'coc-clangd',
-        \ 'coc-cmake'
+        \ 'coc-pyright'
     \ ]
 
     let g:LanguageClient_serverCommands = {
-    \ 'cpp': ['clangd']
     \ }
 
     " Use tab for trigger completion with characters ahead and navigate.
