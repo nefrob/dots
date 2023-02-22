@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 xcode-select --install
+brew tap homebrew/cask-fonts
 brew bundle --file=Brewfile --no-lock --no-upgrade
 git submodule update --init
 
@@ -13,10 +14,10 @@ ln -s "$(pwd)/.zsh" $HOME/.zsh
 echo "export ZDOTDIR=$HOME/.zsh" >> $HOME/.zshenv
 
 # copy any existing files
-cat $HOME/.zshenv >> .zsh/.zshenv
-if (test -a $HOME/.zprofile); then cat $HOME/.zprofile >> .zsh/.zprofile; fi
-if (test -a $HOME/.zlogin); then cat $HOME/.zlogin >> .zsh/.zlogin; fi
-if (test -a $HOME/.zlogout); then cat $HOME/.zlogout >> .zsh/.zlogout; fi
+cat $HOME/.zshenv >> $(pwd)/.zsh/.zshenv
+if [ -f $HOME/.zprofile ]; then cat $HOME/.zprofile >> $(pwd)/.zsh/.zprofile; fi
+if [ -f $HOME/.zlogin ]; then cat $HOME/.zlogin >> $(pwd)/.zsh/.zlogin; fi
+if [ -f $HOME/.zlogout ]; then cat $HOME/.zlogout >> $(pwd)/.zsh/.zlogout; fi
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -69,6 +70,17 @@ ln -s "$(pwd)/.tmux" $HOME/.tmux
 ln -s "$(pwd)/.tmux/.tmux.conf" $HOME/.tmux.conf
 echo "Install plugins via \`prefix\` + \`I\` with tmux running."
 echo "Read more here: https://github.com/tmux-plugins/tpm"
+
+# Setup vscode cli
+cat << EOF >> $(pwd)/.zsh/.zprofile
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
+echo "Read more here: https://code.visualstudio.com/docs/setup/mac"
+
+# Starship
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=$HOME/.dots/starship.toml
+echo "Read more here: https://starship.rs/guide"
 
 # reload shell since path was updated
 exec "$SHELL"
