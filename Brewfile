@@ -13,6 +13,7 @@ brew "groff"
 
 brew "neovim"
 # cask "visual-studio-code"
+brew "font-hack-nerd-font"
 
 # tools
 

@@ -132,3 +132,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
+
+# starship
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=$HOME/.dots/starship/config.toml
