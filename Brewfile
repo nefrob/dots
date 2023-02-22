@@ -19,7 +19,7 @@ brew "font-hack-nerd-font"
 
 # shell prompt
 brew "starship"
-# temrinal
+# terminal
 cask "warp"
 
 # node

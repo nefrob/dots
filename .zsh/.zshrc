@@ -74,7 +74,7 @@ plugins=(
   git 
   sudo 
   macos
-  zsh-autosuggestions
+  # zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
@@ -118,6 +118,12 @@ alias tilt="cd ${HOME}/Documents/tilt-repo"
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+# kubernetes
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # direnv
 eval "$(direnv hook zsh)"
 
@@ -127,12 +133,10 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# kubernetes
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
-
-# rust
-export PATH="$PATH:$HOME/.cargo/bin"
-
 # starship
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.dots/starship/config.toml
+export STARSHIP_CONFIG=$HOME/.dots/starship.toml
+
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  # > What you want to disable here <
+fi

@@ -79,8 +79,8 @@ echo "Read more here: https://code.visualstudio.com/docs/setup/mac"
 
 # Starship
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.dots/starship/config.toml
-starship preset nerd-font-symbols >> $(pwd)/starship/config.toml
+export STARSHIP_CONFIG=$HOME/.dots/starship.toml
+echo "Read more here: https://starship.rs/guide"
 
 # reload shell since path was updated
 exec "$SHELL"
