@@ -70,5 +70,11 @@ ln -s "$(pwd)/.tmux/.tmux.conf" $HOME/.tmux.conf
 echo "Install plugins via \`prefix\` + \`I\` with tmux running."
 echo "Read more here: https://github.com/tmux-plugins/tpm"
 
+# Setup vscode cli
+cat << EOF >> .zsh/.zprofile
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
+echo "Read more here: https://code.visualstudio.com/docs/setup/mac"
+
 # reload shell since path was updated
 exec "$SHELL"

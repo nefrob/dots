@@ -7,11 +7,36 @@
 @fmt:
     just --fmt --unstable
 
-# Configure git
-@git-config EMAIL NAME="nefrob" EDITOR="nvim":
-    git config --local user.name {{ NAME }}
-    git config --local user.email {{ EMAIL }}
-    git config --local core.editor {{ EDITOR }}
+# git
+
+# Configure git defaults
+@git-config EMAIL NAME="nefrob" EDITOR="code --wait":
+    git config --global user.name {{ NAME }}
+    git config --global user.email {{ EMAIL }}
+    git config --global core.editor {{ EDITOR }}
+    git config --global alias.pushfwl "push --force-with-lease"
+
+# Interactive rebase to make a release branch
+@make-release:
+    echo "Stashing local changes"
+    git stash
+    echo "Creating release branch"
+    git fetch origin
+    git checkout -b $(git config user.name)/release/$(date +%F) --track origin/main
+    git rebase origin/prod -i
+
+# Make a hotfix (cherry-pick branch)
+@make-hotfix cherry_hash hotfix_name="$(date +%F)":
+    echo "Stashing local changes"
+    git stash
+    echo "Cherry picking" {{ cherry_hash }}
+    git fetch origin
+    git checkout -b $(git config user.name)/hotfix/{{ hotfix_name }} --track origin/prod
+    git cherry-pick {{ cherry_hash }}
+
+# Deletes all local branches except the currently checked out one
+@branch-delete-nuclear:
+    git branch -D $(git branch)
 
 # node
 
@@ -58,4 +83,18 @@
 
 # Install formulae from Brewfile
 @brew-install +ARGS="--no-upgrade":
-    brew bundle --file=developer/Brewfile --no-lock {{ ARGS }}
+    brew bundle --file=Brewfile --no-lock {{ ARGS }}
+
+
+# Upgrade brew, dependencies and rehsim
+@brew-upgrade:
+    brew update
+    brew upgrade
+    pyenv rehash
+    asdf reshim
+
+# chrome
+
+# Open Chrome with auto-open-devtools flag
+@chrome-dev:
+    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --auto-open-devtools-for-tabs

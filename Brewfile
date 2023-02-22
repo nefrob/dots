@@ -4,15 +4,22 @@
 brew "just"
 # perodic command output update
 brew "watch"
-# better top
-brew "htop"
-#
+# local env variables export
 brew "direnv"
+# man pages on macOS ventura
+brew "groff"
 
 # editors
 
 brew "neovim"
-cask "visual-studio-code"
+# cask "visual-studio-code"
+
+# tools
+
+# shell prompt
+brew "starship"
+# temrinal
+cask "warp"
 
 # node
 
@@ -27,3 +34,16 @@ brew "yarn"
 brew "pyenv"
 # pyenv-virtualenv is used to create python virtual environments
 brew "pyenv-virtualenv"
+# isolated package runner
+brew "pipx"
+
+# remote
+
+# aws access
+# brew "awscli"
+# configure k8 cluster access
+# brew "kubectl"
+
+# database
+
+# brew "postgresql"
