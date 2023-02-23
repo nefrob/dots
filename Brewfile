@@ -8,6 +8,8 @@ brew "watch"
 brew "direnv"
 # man pages on macOS ventura
 brew "groff"
+# use trash bin
+brew "trash"
 
 # editors
 

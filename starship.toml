@@ -70,18 +70,18 @@ symbol = " "
 symbol = " "
 
 [git_status]
-conflicted = "="
+conflicted = "!" # '='
 ahead = "" # '⇡'
 behind = ""	# '⇣'
 diverged = "" # '⇕'
 up_to_date= "" # ''
 untracked = "" # '?'
 stashed	= "" # '$'
-modified = '!'
+modified = "●" # '!'
 staged = '+'
 renamed = "" # '»'
 deleted	= '✘'
-style = "bold white" # 'bold red'
+style = "grey" # 'bold red'
 
 [golang]
 symbol = " "
