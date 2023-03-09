@@ -25,7 +25,7 @@ error_symbol = "[➜](bold red)"
 disabled = true
 
 [time]
-disabled = false
+disabled = true
 
 [battery]
 full_symbol = "🔋"
@@ -41,6 +41,7 @@ style = "bold red"
 
 [aws]
 symbol = "  "
+disabled = true
 
 [buf]
 symbol = " "

@@ -121,10 +121,6 @@ alias tilt="cd ${HOME}/Documents/tilt-repo"
 
 # Auto appended 
 
-# starship
-eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.dots/starship.toml
-
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
@@ -134,14 +130,18 @@ export STARSHIP_CONFIG=$HOME/.dots/starship.toml
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# direnv
-eval "$(direnv hook zsh)"
+# starship
+export STARSHIP_CONFIG=$HOME/.dots/starship.toml
+eval "$(starship init zsh)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# direnv
+eval "$(direnv hook zsh)"
 
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   # > What you want to disable here <
