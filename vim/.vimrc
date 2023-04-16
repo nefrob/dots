@@ -2,7 +2,7 @@
 
 set nocompatible
 
-let mapleader = ","
+let mapleader = " "
 let maplocalleader = "\\"
 inoremap jj <esc>
 

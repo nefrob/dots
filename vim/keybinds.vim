@@ -14,9 +14,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflicts
 " General Mappings
 set lazyredraw " stop redraw while exec macros
 
-let mapleader = ","
-inoremap jj <ESC>
-
 map <leader>l :set list!<cr> " toggle invisible chars
 
 " Spell check toggle and remaps
@@ -40,6 +37,13 @@ nmap <leader>w :w!<cr>
 inoremap <C-c> <Esc>
 imap <leader>w <C-c>:w!<cr>
 nmap <leader>q :q<cr>
+
+" Tab movement
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-d>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 nnoremap <leader><leader>c :set cursorline!<cr> " toggle cursor line
 

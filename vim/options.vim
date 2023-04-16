@@ -14,7 +14,6 @@ set nomodeline " security, disable mode lines
 set spell spelllang=en_us
 set nospell
 
-
 " Formatting
 set autoindent
 set smartindent

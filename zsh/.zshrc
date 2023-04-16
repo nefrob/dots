@@ -116,17 +116,18 @@ source $ZSH/oh-my-zsh.sh
 alias sz="source ${ZDOTDIR:-~}/.zshrc"
 alias c=clear
 alias rm=trash
+alias v=nvim
+
 function take {
   mkdir -p $1
   cd $1
 }
 
+# Custom gitignored aliases go in ./custom/config.zsh
+
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   # > What you want to disable here <
 fi
-
-# Per computer aliases go in ./custom/config.zsh
-
 
 # Auto appended values
 
