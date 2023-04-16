@@ -72,6 +72,7 @@ echo "Setting up nvim"
 echo "See https://nvchad.com/docs/quickstart/install for latest instructions"
 
 git clone https://github.com/NvChad/NvChad $(pwd)/nvchad --depth 1
+ln -s "$(pwd)/nvim/custom" "$(pwd)/nvim/nvchad/lua/custom"
 ln -s "$(pwd)/nvim/nvchad" $HOME/.config/nvim
 
 # TODO custom directory and custom overrides
