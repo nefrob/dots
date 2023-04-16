@@ -8,8 +8,10 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="kolo" 
-# Other themes I like:
+# Disabled in favor of starship
+# ZSH_THEME="kolo" 
+
+# Other themes to consider
 #jnrowe, kolo,  bira, agnoster, arrow
 
 # Set list of themes to pick from when loading at random
@@ -63,51 +65,53 @@ ZSH_THEME="kolo"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=${ZDOTDIR:-~}/custom
 
-# Which plugins would you like to load?
+# Plugins
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
+  asdf
+  brew
+  direnv
+  docker
   git 
-  sudo 
+  kubectl
   macos
+  pip
+  sudo
+  tmux
+  yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# export TERM=screen-256color
-# export TERM=tmux-256color
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# Configuration
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export MYVIMRC=$HOME/.vim/.vimrc
+# export VIMINIT='source $MYVIMRC'
+
+# export TERM=screen-256color
+# export TERM=tmux-256color
+
+# Aliases
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias sz="source ${ZDOTDIR:-~}/.zshrc"
 alias c=clear
@@ -117,9 +121,14 @@ function take {
   cd $1
 }
 
-alias tilt="cd ${HOME}/Documents/tilt-repo"
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  # > What you want to disable here <
+fi
 
-# Auto appended 
+# Per computer aliases go in ./custom/config.zsh
+
+
+# Auto appended values
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
@@ -131,7 +140,6 @@ alias tilt="cd ${HOME}/Documents/tilt-repo"
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # starship
-export STARSHIP_CONFIG=$HOME/.dots/starship.toml
 eval "$(starship init zsh)"
 
 # pyenv
@@ -142,7 +150,3 @@ eval "$(pyenv virtualenv-init -)"
 
 # direnv
 eval "$(direnv hook zsh)"
-
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-  # > What you want to disable here <
-fi

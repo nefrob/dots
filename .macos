@@ -46,3 +46,8 @@ defaults write com.apple.dock autohide-time-modifier -int 0
 defaults write com.apple.Dock showhidden -bool true
 
 killall Dock
+
+
+# On a Mac, the h, j, k and l movement keys may not repeat when held, to 
+# fix this open Terminal and execute the following command: 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false

@@ -48,7 +48,7 @@
 # python
 
 # Install a python version
-@pyenv-install VERSION="3.10.6" SCOPE="global":
+@pyenv-install VERSION="3.11:latest" SCOPE="global":
     pyenv install {{ VERSION }}
     pyenv {{ SCOPE }} {{ VERSION }}
 
@@ -63,15 +63,14 @@
 
 # vim
 
-# Install vim plugins
-@vim-plugin-install:
-    vi +PlugInstall +qall
+# Install coc extension
+@vim-coc-install EXTENSION_NAME:
+    vim +CocInstall {{ EXTENSION_NAME }}
 
-# neovim
+# nvim
 
-# Install nvim plugins
-@nvim-plugin-install:
-    nvim +PlugInstall +qall
+@nvchad-update:
+    nvim +NvChadUpdate
 
 # tmux
 
@@ -85,7 +84,6 @@
 @brew-install +ARGS="--no-upgrade":
     brew bundle --file=Brewfile --no-lock {{ ARGS }}
 
-
 # Upgrade brew, dependencies and rehsim
 @brew-upgrade:
     brew update
@@ -97,4 +95,5 @@
 
 # Open Chrome with auto-open-devtools flag
 @chrome-dev:
-    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --auto-open-devtools-for-tabs
+    echo "You need to quit out of chrome before running this for it to work"
+    open -a "Google Chrome" --args --auto-open-devtools-for-tab
