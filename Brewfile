@@ -14,6 +14,8 @@ brew "trash"
 cask "alfred"
 # window management
 cask "rectangle"
+# search
+brew "the_silver_searcher"
 
 # editors
 

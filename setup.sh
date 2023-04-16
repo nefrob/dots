@@ -10,9 +10,9 @@ echo "Setting up zsh"
 
 # Read more on startup files here: https://zsh.sourceforge.io/Intro/intro_3.html
 mkdir -p $HOME/.config
-ln -s "$(pwd)/zsh" $HOME/.config/zsh
-echo Setting ZDOTDIR to $HOME/.config/zsh
-echo "export ZDOTDIR=$HOME/.config/zsh" >> $HOME/.zshenv
+ln -s "$(pwd)/zsh" $HOME/.zsh
+echo Setting ZDOTDIR to $HOME/.zsh
+echo "export ZDOTDIR=$HOME/.zsh" >> $HOME/.zshenv
 
 mkdir -p "$(pwd)/zsh/custom"
 touch "$(pwd)/zsh/custom/config.zsh"
