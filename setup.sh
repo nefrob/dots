@@ -3,7 +3,6 @@
 xcode-select --install
 brew tap homebrew/cask-fonts
 brew bundle --file=Brewfile --no-lock --no-upgrade
-git submodule update --init
 
 # Setup zsh
 
@@ -84,6 +83,7 @@ echo "Install plugins via \`prefix\` + \`I\` with tmux running."
 echo "Read more here: https://github.com/tmux-plugins/tpm"
 
 ln -s "$(pwd)/tmux" $HOME/.config/tmux
+git clone https://github.com/tmux-plugins/tpm $(pwd)/tmux/plugins/tpm
 
 # Setup vscode cli
 echo "Setting up vscode cli"
