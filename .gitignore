@@ -1,18 +1,18 @@
 # zsh
-.zsh/*
-!.zsh.zshrc
+zsh/*
+!zsh/.zshrc
 
 # vim
-.vim/plugged/*
-.vim/spell/*
-.vim/session/*
+vim/plugged/*
+vim/spell/*
+vim/session/*
 
 # neovim
+nvim/nvchad
 
 # tmux
-.tmux/plugins/*
-!.tmux/plugins/tpm
-.tmux/resurrect/*
+tmux/plugins/*
+tmux/resurrect/*
 
 # node
 .tool-versions

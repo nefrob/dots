@@ -4,10 +4,9 @@
 
 On Mac:
 
-- If `zsh` is not your default shell, install `zsh` per `oh-my-zsh` [instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
-- Install `oh-my-zsh` per [instructions](https://github.com/ohmyzsh/ohmyzsh).
-- Install `git` and `tmux` if not already.
-- Install `brew` per  [instructions](https://brew.sh/).
+- If `zsh` is not your default shell, install `zsh` per: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH.
+- Install `oh-my-zsh`: `https://github.com/ohmyzsh/ohmyzsh.
+- Install `brew`: https://brew.sh/.
 - Run the setup script:
 
     ```bash
@@ -15,15 +14,30 @@ On Mac:
     ./setup.sh
     ```
 
-Post setup notes:
+### Post setup notes
+
+Tmux:
 
 - Install `tpm` plugins via `prefix` + `I` with `tmux` running.
-- Make sure you are using a power line enabled font (preferably nerd-font patched for additional glyphs) ex. [CaskaydiaCode](https://github.com/ryanoasis/nerd-fonts/releases/).
+
+Starship:
+
+- Make sure you are using a power line enabled font (preferably nerd-font patched for additional glyphs)
+
+Additional commands:
+
 - See [justfile](./justfile) for other useful commands.
-- Install `coc` extensions via `:CocInstall coc-extension-name` in `vim`.
 
 ### Additional Reading
 
-- Further info on [vim-plug](https://github.com/junegunn/vim-plug/).
+Nvim setup
 
-- Further info on [tpm](https://github.com/tmux-plugins/tpm).
+- https://nvchad.com/docs/quickstart/install
+
+Package management
+
+- https://github.com/junegunn/vim-plug/
+
+- https://github.com/tmux-plugins/tpm
+
+- https://github.com/neoclide/coc.nvim

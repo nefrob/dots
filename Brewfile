@@ -10,19 +10,30 @@ brew "direnv"
 brew "groff"
 # use trash bin
 brew "trash"
+# app launcher
+cask "alfred"
+# window management
+cask "rectangle"
+# search
+brew "the_silver_searcher"
 
 # editors
 
 brew "neovim"
 # cask "visual-studio-code"
+# powerline fonts
 brew "font-hack-nerd-font"
 
 # tools
 
 # shell prompt
 brew "starship"
-# terminal
+# terminals
+# cask "iterm2"
 cask "warp"
+brew "tmux"
+# notes
+# cask "notion"
 
 # node
 
@@ -47,6 +58,16 @@ brew "pipx"
 # configure k8 cluster access
 # brew "kubectl"
 
-# database
+# local dev
 
+# database
 # brew "postgresql"
+# containers
+# brew "docker"
+
+# other
+
+# work
+# cask "slack"
+# browsers
+# cask "google-chrome"
