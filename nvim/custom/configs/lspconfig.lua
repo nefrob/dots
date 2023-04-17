@@ -1,6 +1,6 @@
-local on_attach = require("plugins.condigs.lspconfig").on_attach
-local capabilities = require("plugins.condigs.lspconfig").capabilities
-
-local lspconfig = require "lspconfig"
+local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = require("plugins.configs.lspconfig").capabilities
+local lspconfig = require("lspconfig")
+local util = require "lspconfig/util"
 
 -- add new language servers here
