@@ -60,11 +60,12 @@ echo "Skipping vim setup in favor of nvim"
 
 # echo "Setting up vim"
 
-# ln -s "$(pwd)/vim" $HOME/.vim
+ln -s "$(pwd)/vim" $HOME/.vim
+ln -s "$(pwd)/vim/.vimrc" $HOME/.vimrc
 
-# echo "Installing plugins"
-# echo "Read more on plugin management here: https://github.com/junegunn/vim-plug/"
-# vim +PlugInstall +qall
+echo "Installing plugins"
+echo "Read more on plugin management here: https://github.com/junegunn/vim-plug/"
+vim +PlugInstall +qall
 
 # Link nvim dotfiles
 
@@ -74,8 +75,6 @@ echo "See https://nvchad.com/docs/quickstart/install for latest instructions"
 git clone https://github.com/NvChad/NvChad $(pwd)/nvchad --depth 1
 ln -s "$(pwd)/nvim/custom" "$(pwd)/nvim/nvchad/lua/custom"
 ln -s "$(pwd)/nvim/nvchad" $HOME/.config/nvim
-
-# TODO custom directory and custom overrides
 
 # Link tmux dot files
 
