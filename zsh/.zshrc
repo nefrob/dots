@@ -117,6 +117,7 @@ alias sz="source ${ZDOTDIR:-~}/.zshrc"
 alias c=clear
 alias rm=trash
 alias v=nvim
+alias j=just
 
 function take {
   mkdir -p $1

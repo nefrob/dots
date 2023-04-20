@@ -33,10 +33,10 @@ nnoremap <leader><leader>r :let @/='<C-r>=expand("<cword>")<cr>'<cr>:set hls<cr>
 nnoremap <leader>fr :%s/
 
 " Saving / exiting
-nmap <leader>w :w!<cr>
+nmap <leader>w <cmd>w!<cr>
 inoremap <C-c> <Esc>
-imap <leader>w <C-c>:w!<cr>
-nmap <leader>q :q<cr>
+imap <leader>w <C-c><cmd>w!<cr>
+nmap <leader>q <cmd<q<cr>
 
 " Tab movement
 nnoremap <Tab> >>_
