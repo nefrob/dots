@@ -64,6 +64,8 @@ brew "pipx"
 # brew "postgresql"
 # containers
 # brew "docker"
+# redis
+# cask "redisinsight"
 
 # other
 

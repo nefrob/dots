@@ -89,6 +89,11 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# Have oh my zsh load brew auto completions
+# It will auto run `compinit` in the source below
+eval "$(brew shellenv)"
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # Configuration
@@ -130,7 +135,11 @@ if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   # > What you want to disable here <
 fi
 
+source $ZSH/oh-my-zsh.sh
+
 # Auto appended values
+
+# export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
