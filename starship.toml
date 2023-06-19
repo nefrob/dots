@@ -40,8 +40,10 @@ style = "bold red"
 # Symbols:starship preset nerd-font-symbols >> $(pwd)/starship.toml
 
 [aws]
-symbol = "  "
-disabled = true
+# default 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+format = 'on [$symbol($profile )(\[$duration\] )]($style)'
+# symbol = " "
+# disabled = true
 
 [buf]
 symbol = " "
@@ -59,7 +61,8 @@ symbol = " "
 read_only = " "
 
 [docker_context]
-symbol = " "
+symbol = ""
+disabled = true
 
 [elixir]
 symbol = " "
@@ -166,8 +169,10 @@ Windows = " "
 symbol = " "
 
 [python]
-symbol = " "
-disabled = true
+# default 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = 'via [${symbol}${pyenv_prefix}(\($virtualenv\) )]($style)'
+# symbol = " "
+# disabled = true
 
 [rlang]
 symbol = "ﳒ "

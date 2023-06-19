@@ -87,6 +87,7 @@ plugins=(
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-django
 )
 
 # Have oh my zsh load brew auto completions
@@ -150,14 +151,19 @@ source $ZSH/oh-my-zsh.sh
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# starship
-eval "$(starship init zsh)"
+
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# starship
+eval "$(starship init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
