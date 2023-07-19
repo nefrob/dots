@@ -73,3 +73,6 @@ brew "pipx"
 # cask "slack"
 # browsers
 # cask "google-chrome"
+
+# fun
+brew "cmatrix"
