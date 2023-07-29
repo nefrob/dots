@@ -121,5 +121,14 @@ if ! type -f starship >/dev/null; then
     source ${ZDOTDIR:-~}/.zshrc
 fi
 
+# Helix
+echo "Setting up helix"
+echo "Read more here: https://docs.helix-editor.com/install.html"
+
+if ! type -f hx >/dev/null; then
+    ln -s "$(pwd)/helix" $HOME/.config/helix
+    source ${ZDOTDIR:-~}/.zshrc
+fi
+
 # reload shell since path was updated
 exec "$SHELL"

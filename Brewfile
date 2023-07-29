@@ -20,6 +20,7 @@ brew "the_silver_searcher"
 # editors
 
 brew "neovim"
+brew "helix"
 # cask "visual-studio-code"
 # powerline fonts
 brew "font-hack-nerd-font"
@@ -32,6 +33,7 @@ brew "starship"
 # cask "iterm2"
 cask "warp"
 brew "tmux"
+brew "zellij"
 # notes
 # cask "notion"
 
