@@ -151,8 +151,6 @@ source $ZSH/oh-my-zsh.sh
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
 
-
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -167,3 +165,6 @@ eval "$(starship init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# zellij
+eval "$(zellij setup --generate-auto-start zsh)"

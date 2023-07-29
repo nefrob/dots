@@ -47,11 +47,17 @@ just node-install
 echo "Setting up pyenv"
 echo "See https://github.com/pyenv/pyenv for latest instructions"
 
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ${ZDOTDIR:-~}/.zshrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ${ZDOTDIR:-~}/.zshrc
-echo 'eval "$(pyenv init -)"' >> ${ZDOTDIR:-~}/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ${ZDOTDIR:-~}/.zshrc 
-source ${ZDOTDIR:-~}/.zshrc
+if ! type -f pyenv >/dev/null; then
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ${ZDOTDIR:-~}/.zshrc
+    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ${ZDOTDIR:-~}/.zshrc
+    echo 'eval "$(pyenv init -)"' >> ${ZDOTDIR:-~}/.zshrc
+    source ${ZDOTDIR:-~}/.zshrc
+fi
+
+if ! type -f pyenv-virtualenv >/dev/null; then
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ${ZDOTDIR:-~}/.zshrc 
+    source ${ZDOTDIR:-~}/.zshrc
+fi
 
 pyenv install 3.11:latest
 pyenv global $(pyenv latest 3.11)
@@ -99,8 +105,18 @@ EOF
 echo "Setting up startship"
 echo "Read more here: https://starship.rs/guide"
 
-ln -s "$(pwd)/starship.toml" $HOME/.config/starship.toml
-echo 'eval "$(starship init zsh)"' >> ${ZDOTDIR:-~}/.zshrc
+if ! type -f starship >/dev/null; then
+    ln -s "$(pwd)/starship.toml" $HOME/.config/starship.toml
+    echo 'eval "$(starship init zsh)"' >> ${ZDOTDIR:-~}/.zshrc
+    source ${ZDOTDIR:-~}/.zshrc
+fi
+
+# Zellij
+if ! type -f starship >/dev/null; then
+    ln -s "$(pwd)/zellij" $HOME/.config/zellij
+    echo 'eval "$(zellij setup --generate-auto-start zsh)"' >> ${ZDOTDIR:-~}/.zshrc
+    source ${ZDOTDIR:-~}/.zshrc
+fi
 
 # reload shell since path was updated
 exec "$SHELL"
