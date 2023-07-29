@@ -112,6 +112,9 @@ if ! type -f starship >/dev/null; then
 fi
 
 # Zellij
+echo "Setting up zellij"
+echo "Read more here: https://zellij.dev/documentation/introduction.html"
+
 if ! type -f starship >/dev/null; then
     ln -s "$(pwd)/zellij" $HOME/.config/zellij
     echo 'eval "$(zellij setup --generate-auto-start zsh)"' >> ${ZDOTDIR:-~}/.zshrc
