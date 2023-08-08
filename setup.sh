@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 xcode-select --install
 brew tap homebrew/cask-fonts
@@ -31,6 +31,12 @@ git clone https://github.com/ikhomutov/zsh-django \
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-django
 
 source ${ZDOTDIR:-~}/.zshrc
+
+# Git
+# Helix
+echo "Setting up git"
+ln -s "$(pwd)/git" $HOME/.config/git
+
 
 # Setup asdf for managing different versions of nodejs
 

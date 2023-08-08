@@ -27,6 +27,8 @@ brew "font-hack-nerd-font"
 
 # tools
 
+# version control
+brew "git"
 # shell prompt
 brew "starship"
 # terminals

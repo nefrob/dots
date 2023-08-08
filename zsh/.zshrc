@@ -167,4 +167,4 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 # zellij
-eval "$(zellij setup --generate-auto-start zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
