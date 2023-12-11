@@ -16,14 +16,20 @@ cask "alfred"
 cask "rectangle"
 # search
 brew "the_silver_searcher"
+# display
+brew "bat"
+# commands
+brew "thefuck"
 
 # editors
 
 brew "neovim"
 brew "helix"
 # cask "visual-studio-code"
+# cask "vscodium"
 # powerline fonts
-brew "font-hack-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-monaspace-nerd-font"
 
 # tools
 

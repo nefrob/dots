@@ -10,6 +10,9 @@ vim/session/*
 # neovim
 nvim/nvchad
 
+# helix
+helix/runtime
+
 # tmux
 tmux/plugins/*
 tmux/resurrect/*

@@ -166,5 +166,14 @@ eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
+# xhost 
+alias xhost="/usr/X11/bin/xhost"
+
 # zellij
 # eval "$(zellij setup --generate-auto-start zsh)"
+# if set -q ZELLIJ
+# else
+#   zellij a work
+# end
+
+eval $(thefuck --alias fx)

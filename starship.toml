@@ -73,19 +73,23 @@ symbol = " "
 [git_branch]
 symbol = " "
 
+[git_commit]
+tag_symbol = '🔖 '
+
 [git_status]
-conflicted = "!" # '='
-ahead = "" # '⇡'
-behind = ""	# '⇣'
-diverged = "" # '⇕'
-up_to_date = "" # ''
+conflicted = "!"           # '='
+ahead = ""                 # '⇡'
+behind = ""                # '⇣'
+diverged = ""              # '⇕'
+up_to_date = ""            # ''
 untracked = "[●](#ff8b3d)" # '?'
-stashed	= "" # '$'
-modified = "[●](yellow)" # '!'
-staged = "[●](green)" # '+'
-renamed = "" # '»'
-deleted	= "[●](red)" # '✘'
-style = "grey" # 'bold red'
+stashed = ""               # '$'
+modified = "[●](yellow)"   # '!'
+staged = "[●](green)"      # '+'
+renamed = ""               # '»'
+deleted = "[●](red)"       # '✘'
+style = "grey"             # 'bold red'
+
 
 [golang]
 symbol = " "
