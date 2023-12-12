@@ -20,6 +20,8 @@ brew "the_silver_searcher"
 brew "bat"
 # commands
 brew "thefuck"
+# search
+brew "fzf"
 
 # editors
 
