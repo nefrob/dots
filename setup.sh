@@ -84,11 +84,8 @@ vim +PlugInstall +qall
 # Link nvim dotfiles
 
 echo "Setting up nvim"
-echo "See https://nvchad.com/docs/quickstart/install for latest instructions"
-
-git clone https://github.com/NvChad/NvChad $(pwd)/nvchad --depth 1
-ln -s "$(pwd)/nvim/custom" "$(pwd)/nvim/nvchad/lua/custom"
-ln -s "$(pwd)/nvim/nvchad" $HOME/.config/nvim
+echo "See https://www.lazyvim.org/ for latest instructions"
+ln -s "$(pwd)/nvim" $HOME/.config/nvim
 
 # Link tmux dot files
 

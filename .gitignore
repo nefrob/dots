@@ -25,3 +25,6 @@ tmux/resurrect/*
 
 # direnv
 .envrc
+
+# git
+!git/.gitconfig
