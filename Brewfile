@@ -15,18 +15,20 @@ cask "alfred"
 # window management
 cask "rectangle"
 # search
-brew "the_silver_searcher"
+# brew "the_silver_searcher"
 # display
-brew "bat"
+# brew "bat"
 # commands
-brew "thefuck"
+# brew "thefuck"
 # search
 brew "fzf"
+brew "fd"
+brew "ripgrep"
 
 # editors
 
 brew "neovim"
-brew "helix"
+# brew "helix"
 # cask "visual-studio-code"
 # cask "vscodium"
 # powerline fonts
@@ -40,9 +42,9 @@ brew "git"
 # shell prompt
 brew "starship"
 # terminals
-# cask "iterm2"
-cask "warp"
-brew "tmux"
+cask "iterm2"
+# cask "warp"
+# brew "tmux"
 brew "zellij"
 # notes
 # cask "notion"

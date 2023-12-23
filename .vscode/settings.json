@@ -1,0 +1,7 @@
+{
+    // TODO: https://github.com/microsoft/vscode/issues/134415#
+    // "explorer.excludeGitIgnore": true,
+    // "files.exclude": {
+    //     "zsh/custom/**/*": false
+    // }
+}

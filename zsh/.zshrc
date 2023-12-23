@@ -80,14 +80,14 @@ plugins=(
   docker
   git 
   kubectl
-  macos
+  # macos
   pip
-  sudo
+  # sudo
   tmux
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-django
+  # zsh-django
 )
 
 # Have oh my zsh load brew auto completions
@@ -120,14 +120,16 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 alias sz="source ${ZDOTDIR:-~}/.zshrc"
-alias c=clear
 alias rm=trash
 alias v=nvim
 alias j=just
+alias activate="source venv/bin/activate"
+alias personal="session personal"
 
-function take {
-  mkdir -p $1
-  cd $1
+function session {
+  if [[ $ZELLIJ_SESSION_NAME != $1 ]]; then
+    zellij a $1
+  fi
 }
 
 # Custom gitignored aliases go in ./custom/config.zsh
@@ -171,9 +173,5 @@ alias xhost="/usr/X11/bin/xhost"
 
 # zellij
 # eval "$(zellij setup --generate-auto-start zsh)"
-# if set -q ZELLIJ
-# else
-#   zellij a work
-# end
 
-eval $(thefuck --alias fx)
+# eval $(thefuck --alias fx)
