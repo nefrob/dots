@@ -64,13 +64,13 @@
 # vim
 
 # Install coc extension
-@vim-coc-install EXTENSION_NAME:
-    vim +CocInstall {{ EXTENSION_NAME }}
+# @vim-coc-install EXTENSION_NAME:
+#     vim +CocInstall {{ EXTENSION_NAME }}
 
 # nvim
 
-@nvchad-update:
-    nvim +NvChadUpdate
+# @nvchad-update:
+#     nvim +NvChadUpdate
 
 # tmux
 

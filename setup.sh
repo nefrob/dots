@@ -65,8 +65,8 @@ if ! type -f pyenv-virtualenv >/dev/null; then
     source ${ZDOTDIR:-~}/.zshrc
 fi
 
-pyenv install 3.11:latest
-pyenv global $(pyenv latest 3.11)
+pyenv install 3.12:latest
+pyenv global $(pyenv latest 3.12)
 
 # Link vim dot files
 
@@ -74,12 +74,12 @@ echo "Skipping vim setup in favor of nvim"
 
 # echo "Setting up vim"
 
-ln -s "$(pwd)/vim" $HOME/.vim
-ln -s "$(pwd)/vim/.vimrc" $HOME/.vimrc
+# ln -s "$(pwd)/vim" $HOME/.vim
+# ln -s "$(pwd)/vim/.vimrc" $HOME/.vimrc
 
-echo "Installing plugins"
-echo "Read more on plugin management here: https://github.com/junegunn/vim-plug/"
-vim +PlugInstall +qall
+# echo "Installing plugins"
+# echo "Read more on plugin management here: https://github.com/junegunn/vim-plug/"
+# vim +PlugInstall +qall
 
 # Link nvim dotfiles
 
@@ -125,13 +125,13 @@ if ! type -f starship >/dev/null; then
 fi
 
 # Helix
-echo "Setting up helix"
-echo "Read more here: https://docs.helix-editor.com/install.html"
+# echo "Setting up helix"
+# echo "Read more here: https://docs.helix-editor.com/install.html"
 
-if ! type -f hx >/dev/null; then
-    ln -s "$(pwd)/helix" $HOME/.config/helix
-    source ${ZDOTDIR:-~}/.zshrc
-fi
+# if ! type -f hx >/dev/null; then
+#     ln -s "$(pwd)/helix" $HOME/.config/helix
+#     source ${ZDOTDIR:-~}/.zshrc
+# fi
 
 # reload shell since path was updated
 exec "$SHELL"
