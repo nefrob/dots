@@ -79,11 +79,11 @@ plugins=(
   direnv
   docker
   git 
-  kubectl
+  # kubectl
   # macos
   pip
   # sudo
-  tmux
+  # tmux
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting

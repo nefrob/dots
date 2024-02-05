@@ -9,6 +9,7 @@ brew bundle --file=Brewfile --no-lock --no-upgrade
 echo "Setting up zsh"
 
 # Read more on startup files here: https://zsh.sourceforge.io/Intro/intro_3.html
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mkdir -p $HOME/.config
 ln -s "$(pwd)/zsh" $HOME/.zsh
 echo Setting ZDOTDIR to $HOME/.zsh
