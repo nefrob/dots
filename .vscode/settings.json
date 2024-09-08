@@ -1,7 +1,78 @@
+// Editor and extension defaults for IDEs
 {
-    // TODO: https://github.com/microsoft/vscode/issues/134415#
-    // "explorer.excludeGitIgnore": true,
-    // "files.exclude": {
-    //     "zsh/custom/**/*": false
-    // }
+  // useful frontend dev defaults
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  // useful python defaults
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always"
+    },
+    "editor.rulers": [115]
+  },
+  "autoDocstring.docstringFormat": "sphinx-notypes",
+  "autoDocstring.startOnNewLine": true,
+  "css.validate": true,
+  "scss.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  // Optionally ignore .gitignore files
+  //   "explorer.excludeGitIgnore": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.watcherExclude": {
+    "**/build": true
+  },
+  // filter out some files from explorer
+  "files.exclude": {
+    "**/.zcompdump*": true,
+    "**/__pycache__": true
+  },
+  "stylelint.validate": [
+    "css",
+    "sass",
+    "postcss",
+    "typescript",
+    "typescriptreact"
+  ],
+  // filter out some files from search
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.yarn/releases": true,
+    "**/yarn.lock": true
+  },
+  // don't use vscode's built-in typescript
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

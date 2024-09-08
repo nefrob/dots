@@ -1,0 +1,28 @@
+# Interactive rebase to make a release branch
+@make-release:
+    echo "Stashing local changes"
+    git stash
+    echo "Creating release branch"
+    git fetch origin
+    git checkout -b $(git config user.name)/release/$(date +%F) --track origin/main
+    git rebase origin/prod -i
+
+# Make a hotfix (cherry-pick branch)
+@make-hotfix cherry_hash hotfix_name="$(date +%F)":
+    echo "Stashing local changes"
+    git stash
+    echo "Cherry picking" {{ cherry_hash }}
+    git fetch origin
+    git checkout -b $(git config user.name)/hotfix/{{ hotfix_name }} --track origin/prod
+    git cherry-pick {{ cherry_hash }}
+
+# Deletes all local branches except the currently checked out one
+@branch-delete-nuclear:
+    git branch -D $(git branch)
+
+# chrome
+
+# Open Chrome with auto-open-devtools flag
+@chrome-dev:
+    echo "You need to quit out of chrome before running this for it to work"
+    open -a "Google Chrome" --args --auto-open-devtools-for-tab

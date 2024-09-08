@@ -1,3 +1,7 @@
+# shell
+
+brew "zsh"
+
 # utilities
 
 # project specific commands
@@ -6,7 +10,7 @@ brew "just"
 brew "watch"
 # local env variables export
 brew "direnv"
-# man pages on macOS ventura
+# man pages on macOS
 brew "groff"
 # use trash bin
 brew "trash"
@@ -16,8 +20,6 @@ cask "alfred"
 cask "rectangle"
 # search
 # brew "the_silver_searcher"
-# display
-# brew "bat"
 # commands
 # brew "thefuck"
 # search
@@ -39,6 +41,7 @@ cask "font-monaspace-nerd-font"
 
 # version control
 brew "git"
+brew "withgraphite/tap/graphite"
 # shell prompt
 brew "starship"
 # terminals

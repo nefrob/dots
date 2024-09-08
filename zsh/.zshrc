@@ -9,7 +9,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # Disabled in favor of starship
-# ZSH_THEME="kolo" 
+# ZSH_THEME="kolo"
 
 # Other themes to consider
 #jnrowe, kolo,  bira, agnoster, arrow
@@ -65,7 +65,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=${ZDOTDIR:-~}/custom
+ZSH_CUSTOM="${ZDOTDIR:-~}/custom"
 
 # Plugins
 
@@ -74,20 +74,18 @@ ZSH_CUSTOM=${ZDOTDIR:-~}/custom
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-  asdf
+  # asdf
   brew
   direnv
   docker
-  git 
+  git
   # kubectl
   # macos
   pip
   # sudo
-  # tmux
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
-  # zsh-django
 )
 
 # Have oh my zsh load brew auto completions
@@ -95,7 +93,7 @@ plugins=(
 eval "$(brew shellenv)"
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # Configuration
 
@@ -123,6 +121,7 @@ alias sz="source ${ZDOTDIR:-~}/.zshrc"
 alias rm=trash
 alias v=nvim
 alias j=just
+alias k=kubectl
 alias activate="source venv/bin/activate"
 alias personal="session personal"
 
@@ -140,7 +139,11 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+######################
 # Auto appended values
+######################
+
+export EDITOR="code --wait"
 
 # export VIRTUAL_ENV_DISABLE_PROMPT=1
 
@@ -168,10 +171,36 @@ eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
-# xhost 
+# xhost
 alias xhost="/usr/X11/bin/xhost"
 
 # zellij
 # eval "$(zellij setup --generate-auto-start zsh)"
 
 # eval $(thefuck --alias fx)
+
+[ -f ${ZDOTDIR:-~}/.fzf.zsh ] && source ${ZDOTDIR:-~}/.fzf.zsh
+
+# Created by `pipx` on 2024-04-01 22:59:54
+export PATH="$PATH:/Users/robertneff/.local/bin"
+
+
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: gt completion >> ~/.zshrc
+#    or gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###

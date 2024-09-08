@@ -1,7 +1,6 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 # Ref: https://github.com/mathiasbynens/dotfiles/blob/main/.macos
-# TODO review this closer
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -47,7 +46,6 @@ defaults write com.apple.Dock showhidden -bool true
 
 killall Dock
 
-
-# On a Mac, the h, j, k and l movement keys may not repeat when held, to 
-# fix this open Terminal and execute the following command: 
+# On a Mac, the h, j, k and l movement keys may not repeat when held, to
+# fix this open Terminal and execute the following command:
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false

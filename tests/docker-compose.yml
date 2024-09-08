@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  dummy:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - IS_MAC=false
