@@ -1,7 +1,7 @@
-version: "3.8"
-
 services:
   alpine:
     build:
       context: .
       dockerfile: ./alpine/Dockerfile
+    entrypoint: ["/bin/sh", "-c", sleep infinity"]
+    command: ["/bin/sh", "-c", sleep infinity"]
