@@ -90,8 +90,10 @@ plugins=(
 
 # Have oh my zsh load brew auto completions
 # It will auto run `compinit` in the source below
-eval "$(brew shellenv)"
-fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+if hash brew 2>/dev/null; then
+  eval "$(brew shellenv)"
+  fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+fi
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -117,4 +119,4 @@ source "$ZSH/oh-my-zsh.sh"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh

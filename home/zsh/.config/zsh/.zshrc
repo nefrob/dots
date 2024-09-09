@@ -2,16 +2,16 @@
 
 source "$ZDOTDIR/oh-my-zsh.zsh"
 
-export EDITOR="code --wait"
-if type -f code >/dev/null; then
+if hash code 2>/dev/null; then
   export EDITOR="code --wait"
-elif type -f nvim >/dev/null; then
+elif hash nvim 2>/dev/null; then
   export EDITOR=nvim
-else if type -f vim >/dev/null; then
+elif hash vim 2>/dev/null; then
   export EDITOR=vim
 else
   export EDITOR=vi
 fi
+
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
@@ -34,11 +34,11 @@ if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   # > What you want to disable here <
 fi
 
-if ! type -f asdf >/dev/null; then
+if hash asdf 2>/dev/null; then
     . $(brew --prefix asdf)/libexec/asdf.sh
 fi
 
-if ! type -f pyenv >/dev/null; then
+if hash pyenv 2>/dev/null; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -46,23 +46,23 @@ if ! type -f pyenv >/dev/null; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-if ! type -f starship >/dev/null; then
+if hash starship 2>/dev/null; then
     eval "$(starship init zsh)"
 fi
 
-if ! type -f direnv >/dev/null; then
+if hash direnv 2>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
 
-if ! type -f zellij >/dev/null; then
+if hash zellij 2>/dev/null; then
     # eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
-if ! type -f thefuck >/dev/null; then
-    eval $(thefuck --alias fx)
+if hash thefuck 2>/dev/null; then
+    # eval $(thefuck --alias fx)
 fi
 
-if ! type -f gt >/dev/null; then
+if hash gt 2>/dev/null; then
     #compdef gt
     ###-begin-gt-completions-###
     #
