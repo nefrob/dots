@@ -1,5 +1,4 @@
 # File patterns to un-ignore from vscode features like explorer view and search
 # if vscode `explorer.excludeGitIgnore` is true
 
-!.env
 !.envrc

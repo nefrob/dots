@@ -1,9 +1,7 @@
 version: "3.8"
 
 services:
-  dummy:
+  alpine:
     build:
       context: .
-      dockerfile: ./Dockerfile
-    environment:
-      - IS_MAC=false
+      dockerfile: ./alpine/Dockerfile

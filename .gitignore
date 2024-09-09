@@ -1,21 +1,23 @@
 # zsh
-zsh/*
-!zsh/.zshrc
+home/zsh/.config/zsh/**/*
+!home/zsh/**/.zprofile
+!home/zsh/**/.zshrc
+!home/zsh/**/oh-my-zsh.zsh
 
 # vim
-vim/plugged/*
-vim/spell/*
-vim/session/*
+home/vim/etc/vim/plugged/*
+home/vim/etc/vim/spell/*
+home/vim/etc/vim/session/*
 
 # neovim
-nvim/nvchad
+home/nvim/.config/nvim/nvchad
 
 # helix
-helix/runtime
+home/helix/.config/helix/runtime
 
 # tmux
-tmux/plugins/*
-tmux/resurrect/*
+home/tmux/.config/tmux/plugins/*
+home/tmux/.config/tmux/resurrect/*
 
 # node
 .tool-versions
