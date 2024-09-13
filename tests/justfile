@@ -1,0 +1,10 @@
+@_default:
+    just --list
+
+build:
+    @echo "Testing build succeeds on a clean container in verbose mode"
+    docker-compose build --no-cache --progress=plain alpine
+
+console:
+    @echo "Starting a shell in the container"
+    docker-compose run --rm alpine sh

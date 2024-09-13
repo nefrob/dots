@@ -1,3 +1,72 @@
 {
-    // TODO
+  "recommendations": [
+    // genetal
+    "EditorConfig.EditorConfig",
+    "github.copilot",
+    "mikestead.dotenv",
+    "ms-vscode-remote.remote-containers",
+    // config
+    "ms-azuretools.vscode-docker",
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml",
+    // shell
+    "timonwong.shellcheck",
+    // just
+    "nefrob.vscode-just-syntax"
+  ]
 }
+
+// Other
+
+// {
+//   "recommendations": [
+//     // genetal
+//     "EditorConfig.EditorConfig",
+//     "GitHub.vscode-pull-request-github",
+//     "Tyriar.sort-lines",
+//     "adpyke.codesnap",
+//     "github.copilot",
+//     "github.vscode-pull-request-githubIssues",
+//     "jasonnutter.vscode-codeowners",
+//     "mikestead.dotenv",
+//     "ms-vscode-remote.remote-containers",
+//     "streetsidesoftware.code-spell-checker",
+//     // collab
+//     "ms-vsliveshare.vsliveshare",
+//     // themes
+//     "dracula-theme.theme-dracula",
+//     "zhuangtongfa.material-theme",
+//     // python
+//     "KevinRose.vsc-python-indent",
+//     "charliermarsh.ruff",
+//     "matangover.mypy",
+//     "ms-python.debugpy",
+//     "ms-python.python",
+//     "ms-python.vscode-pylance",
+//     "njpwerner.autodocstring",
+//     // frontend
+//     "dbaeumer.vscode-eslint",
+//     "esbenp.prettier-vscode",
+//     "expo.vscode-expo-tools",
+//     "formulahendry.auto-rename-tag",
+//     "hex-ci.stylelint-plus",
+//     "styled-components.vscode-styled-components",
+//     // devops
+//     "github.vscode-github-actions",
+//     "ms-azuretools.vscode-docker",
+//     "ms-kubernetes-tools.vscode-kubernetes-tools",
+//     "redhat.vscode-yaml",
+//     "tamasfe.even-better-toml",
+//     // rust
+//     "rust-lang.rust-analyzer",
+//     // shell
+//     "timonwong.shellcheck",
+//     // just
+//     "nefrob.vscode-just-syntax"
+//   ],
+//   "unwantedRecommendations": [
+//     "ms-python.black-formatter",
+//     "ms-python.flake8",
+//     "ms-python.isort"
+//   ]
+// }

@@ -1,0 +1,6 @@
+services:
+  alpine:
+    build:
+      context: .
+      dockerfile: ./alpine/Dockerfile
+    # command: sleep infinity

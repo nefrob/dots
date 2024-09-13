@@ -9,7 +9,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # Disabled in favor of starship
-# ZSH_THEME="kolo" 
+# ZSH_THEME="kolo"
 
 # Other themes to consider
 #jnrowe, kolo,  bira, agnoster, arrow
@@ -65,7 +65,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=${ZDOTDIR:-~}/custom
+ZSH_CUSTOM="${ZDOTDIR:-~}/custom"
 
 # Plugins
 
@@ -74,28 +74,28 @@ ZSH_CUSTOM=${ZDOTDIR:-~}/custom
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-  asdf
+  # asdf
   brew
   direnv
   docker
-  git 
-  kubectl
+  git
+  # kubectl
   # macos
   pip
   # sudo
-  tmux
   yarn
   zsh-autosuggestions
   zsh-syntax-highlighting
-  # zsh-django
 )
 
 # Have oh my zsh load brew auto completions
 # It will auto run `compinit` in the source below
-eval "$(brew shellenv)"
-fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+if hash brew 2>/dev/null; then
+  eval "$(brew shellenv)"
+  fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+fi
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # Configuration
 
@@ -119,59 +119,4 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias sz="source ${ZDOTDIR:-~}/.zshrc"
-alias rm=trash
-alias v=nvim
-alias j=just
-alias activate="source venv/bin/activate"
-alias personal="session personal"
-
-function session {
-  if [[ $ZELLIJ_SESSION_NAME != $1 ]]; then
-    zellij a $1
-  fi
-}
-
-# Custom gitignored aliases go in ./custom/config.zsh
-
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-  # > What you want to disable here <
-fi
-
-source $ZSH/oh-my-zsh.sh
-
-# Auto appended values
-
-# export VIRTUAL_ENV_DISABLE_PROMPT=1
-
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# kubernetes
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
-
-# rust
-export PATH="$PATH:$HOME/.cargo/bin"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# starship
-eval "$(starship init zsh)"
-
-# direnv
-eval "$(direnv hook zsh)"
-
-# xhost 
-alias xhost="/usr/X11/bin/xhost"
-
-# zellij
-# eval "$(zellij setup --generate-auto-start zsh)"
-
-# eval $(thefuck --alias fx)
+# source $ZSH/oh-my-zsh.sh
