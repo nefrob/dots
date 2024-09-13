@@ -15,7 +15,7 @@ fi
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
-alias sz="source ${ZDOTDIR:-~}/.zshrc"
+alias sz="source ${ZDOTDIR:-$HOME}/.zshrc"
 alias rm=trash
 alias v=nvim
 alias j=just

@@ -3,5 +3,4 @@ services:
     build:
       context: .
       dockerfile: ./alpine/Dockerfile
-    entrypoint: ["/bin/sh", "-c", sleep infinity"]
-    command: ["/bin/sh", "-c", sleep infinity"]
+    # command: sleep infinity

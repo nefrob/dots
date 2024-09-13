@@ -31,12 +31,13 @@ fi
 
 setup_zsh
 
-echo "Setting up stow config symlinks"
-stow \
+# echo "Setting up stow config symlinks"
+( cd home && stow \
     -t "$HOME" \
     zsh \
     vim \
     tmux
+)
 
 # reload shell since the path was updated
 exec "$SHELL"
