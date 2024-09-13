@@ -11,15 +11,14 @@ setup_zsh() {
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         echo "Installing oh my zsh"
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        mkdir -p "$(pwd)/zsh/custom"
+        touch "$(pwd)/zsh/custom/config.zsh"
     fi
 
     echo "Copying existing zshenv config"
-    if [ -f "$HOME/.zshenv" ]; then cat "$HOME/.zshenv" >> "$(pwd)/zsh/.config/zsh/.zshenv"; fi
-    if [ -f "$HOME/.zlogin" ]; then cat "$HOME/.zlogin" >> "$(pwd)/zsh/.config/zsh/.zlogin"; fi
-    if [ -f "$HOME/.zlogout" ]; then cat "$HOME/.zlogout" >> "$(pwd)/zsh/.config/zsh/zlogout"; fi
-
-    zsh
-    just zsh-setup
+    if [ -f "$HOME/.zshenv" ]; then cp "$HOME/.zshenv" "$(pwd)/zsh/.config/zsh/.zshenv.bak"; fi
+    if [ -f "$HOME/.zlogin" ]; then cp "$HOME/.zlogin" "$(pwd)/zsh/.config/zsh/.zlogin.bak"; fi
+    if [ -f "$HOME/.zlogout" ]; then cp "$HOME/.zlogout" "$(pwd)/zsh/.config/zsh/.zlogout.bak"; fi
 }
 
 if [[ "$(uname -s)" == 'Darwin' ]]; then
