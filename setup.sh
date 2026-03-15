@@ -1,43 +1,61 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-setup_zsh() {
-    if [ "$SHELL" != "/bin/zsh" ] && [ "$SHELL" != "/usr/bin/zsh" ]; then
-        echo "Switching shell to zsh"
-        chsh -s "$(which zsh)"
-        zsh
-    fi
+DOTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        echo "Installing oh my zsh"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        mkdir -p "$(pwd)/zsh/custom"
-        touch "$(pwd)/zsh/custom/config.zsh"
-    fi
-
-    echo "Copying existing zshenv config"
-    if [ -f "$HOME/.zshenv" ]; then cp "$HOME/.zshenv" "$(pwd)/zsh/.config/zsh/.zshenv.bak"; fi
-    if [ -f "$HOME/.zlogin" ]; then cp "$HOME/.zlogin" "$(pwd)/zsh/.config/zsh/.zlogin.bak"; fi
-    if [ -f "$HOME/.zlogout" ]; then cp "$HOME/.zlogout" "$(pwd)/zsh/.config/zsh/.zlogout.bak"; fi
-}
-
+# macOS bootstrap
 if [[ "$(uname -s)" == 'Darwin' ]]; then
-    echo "Setting up macOS"
-    xcode-select --install
-    chmox +x os/.macos
+    echo "Installing Xcode command line tools..."
+    xcode-select --install 2>/dev/null || true
+
+    echo "Running macOS setup script..."
+    chmod +x os/.macos
     ./os/macos
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Install Homebrew
+    echo "Installing Homebrew..."
+    if ! hash brew 2>/dev/null; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
+
+    # Install packages (includes stow, mise, git, zsh, just)
+    echo "Installing brew packages..."
+    brew tap homebrew/cask-fonts
+    brew bundle --file="$DOTS_DIR/packages/Brewfile" --no-lock
 fi
 
-setup_zsh
+# Setup zsh
+echo "Setting up zsh..."
+if [ "$SHELL" != "/bin/zsh" ] && [ "$SHELL" != "/opt/homebrew/bin/zsh" ]; then
+    chsh -s "$(which zsh)"
+fi
 
-# echo "Setting up stow config symlinks"
-( cd home && stow \
-    -t "$HOME" \
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing oh my zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    mkdir -p "$DOTS_DIR/zsh/custom"
+    touch "$DOTS_DIR/zsh/custom/config.zsh"
+fi
+
+# Back up any existing zsh files before stow overwrites them
+for f in .zshenv .zlogin .zlogout; do
+    [ -f "$HOME/$f" ] && cp "$HOME/$f" "$DOTS_DIR/home/zsh/.config/zsh/${f}.bak" || true
+done
+
+# Stow dotfiles
+echo "Stowing dotfiles..."
+( cd "$DOTS_DIR/home" && stow -t "$HOME" \
     zsh \
+    nvim \
     vim \
-    tmux
+    tmux \
+    mise \
+    git \
+    starship \
+    ghostty \
+    helix \
+    zellij
 )
 
-# reload shell since the path was updated
-exec "$SHELL"
+echo "Done. Reload your shell: exec zsh"
