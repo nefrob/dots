@@ -23,6 +23,7 @@ alias k=kubectl
 alias activate="source venv/bin/activate"
 alias personal="session personal"
 alias xhost="/usr/X11/bin/xhost"
+alias dots="cd ~/dots"
 
 function session {
   if [[ $ZELLIJ_SESSION_NAME != $1 ]]; then
@@ -32,18 +33,6 @@ function session {
 
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
   # > What you want to disable here <
-fi
-
-if hash asdf 2>/dev/null; then
-    . $(brew --prefix asdf)/libexec/asdf.sh
-fi
-
-if hash pyenv 2>/dev/null; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
 fi
 
 if hash starship 2>/dev/null; then
@@ -84,10 +73,17 @@ if hash gt 2>/dev/null; then
     ###-end-gt-completions-###
 fi
 
+if hash mise 2>/dev/null; then
+    eval "$(mise activate zsh)"
+fi
+
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
+
 [ -f ${ZDOTDIR:-~}/.fzf.zsh ] && source ${ZDOTDIR:-~}/.fzf.zsh
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # Auto appended values
 
-# Created by `pipx` on 2024-04-01 22:59:54
 export PATH="$PATH:/Users/robertneff/.local/bin"

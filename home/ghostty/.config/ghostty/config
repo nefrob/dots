@@ -1,0 +1,17 @@
+font-family = "MonaspiceKr Nerd Font"
+theme = Dracula
+background-opacity = 0.925
+confirm-close-surface = false
+cursor-style = bar
+quick-terminal-position = center
+quick-terminal-animation-duration = 0
+quick-terminal-space-behavior = remain
+scrollback-limit=16192
+shell-integration = zsh
+shell-integration-features = no-cursor
+unfocused-split-opacity = 1
+window-height = 35
+window-width = 110
+
+keybind = global:cmd+shift+l=toggle_visibility
+keybind = global:cmd+shift+;=toggle_quick_terminal

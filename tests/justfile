@@ -5,6 +5,16 @@ build:
     @echo "Testing build succeeds on a clean container in verbose mode"
     docker-compose build --no-cache --progress=plain alpine
 
+alias b := build
+
 console:
     @echo "Starting a shell in the container"
     docker-compose run --rm alpine sh
+
+alias c := console
+
+down:
+    @echo "Stopping and removing the container"
+    docker-compose down
+
+alias d := down

@@ -1,0 +1,18 @@
+[tools]
+fd = "latest"
+fzf = "latest"
+ripgrep = "latest"
+node = '24'
+python = '3.14'
+uv = "latest"
+
+[env]
+# Don't set this globally, since it can cause issues with python path
+# resolution with uv
+# UV_PYTHON = { value = "{{ tools.python.path }}", tools = true }
+UV_LINK_MODE = "copy"
+# _.python.venv = { path = ".venv", create = true }
+
+[settings]
+python.uv_venv_auto = "create|source"
+trusted_config_paths = ["~/dots"]

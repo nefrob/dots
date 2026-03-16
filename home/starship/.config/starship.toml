@@ -1,4 +1,4 @@
-# Ref: https://starship.rs/config/#prompt 
+# Ref: https://starship.rs/config/#prompt
 format = '$all'
 
 # Don't print a new line at the start of the prompt
@@ -30,9 +30,9 @@ style = "bold red"
 
 [aws]
 # default 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
-format = 'on [$symbol($profile )(\[$duration\] )]($style)'
+# format = 'on [$symbol($profile )(\[$duration\] )]($style)'
 # symbol = " "
-# disabled = true
+disabled = true
 
 [directory]
 read_only = " "
@@ -68,6 +68,5 @@ disabled = true
 
 [python]
 # default 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-format = 'via [${symbol}${pyenv_prefix}(\($virtualenv\) )]($style)'
-# symbol = " "
-# disabled = true
+format = 'via [${symbol}(\($virtualenv\) )]($style)'
+symbol = " "

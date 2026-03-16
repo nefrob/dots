@@ -1,6 +1,9 @@
 services:
   alpine:
     build:
-      context: .
-      dockerfile: ./alpine/Dockerfile
+      context: ../
+      dockerfile: ./tests/alpine/Dockerfile
     # command: sleep infinity
+    working_dir: /root/dots
+    volumes:
+      - ..:/root/dots

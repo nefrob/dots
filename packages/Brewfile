@@ -6,7 +6,8 @@ brew "zsh"
 
 # project specific commands
 brew "just"
-# perodic command output update
+brew "just-lsp"
+# periodic command output update
 brew "watch"
 # local env variables export
 brew "direnv"
@@ -15,17 +16,9 @@ brew "groff"
 # use trash bin
 brew "trash"
 # app launcher
-cask "alfred"
+cask "raycast"
 # window management
 cask "rectangle"
-# search
-# brew "the_silver_searcher"
-# commands
-# brew "thefuck"
-# search
-brew "fzf"
-brew "fd"
-brew "ripgrep"
 
 # editors
 
@@ -35,7 +28,7 @@ brew "neovim"
 # cask "vscodium"
 # powerline fonts
 cask "font-hack-nerd-font"
-cask "font-monaspace-nerd-font"
+cask "font-monaspace"
 
 # tools
 
@@ -46,34 +39,16 @@ brew "withgraphite/tap/graphite"
 brew "starship"
 # terminals
 cask "iterm2"
+# case ghostty
 # cask "warp"
-# brew "tmux"
+brew "tmux"
 brew "zellij"
 # notes
 # cask "notion"
+# case keycastr
 
-# node
-
-# asdf is used to manage node versions
-brew "asdf"
-# yarn is used to manage node packages
-brew "yarn"
-
-# python
-
-# pyenv is used to set a specific python version
-brew "pyenv"
-# pyenv-virtualenv is used to create python virtual environments
-brew "pyenv-virtualenv"
-# isolated package runner
-brew "pipx"
-
-# remote
-
-# aws access
-# brew "awscli"
-# configure k8 cluster access
-# brew "kubectl"
+# mise is used to manage tool versions
+brew "mise"
 
 # local dev
 
@@ -92,4 +67,4 @@ brew "pipx"
 # cask "google-chrome"
 
 # fun
-brew "cmatrix"
+# brew "cmatrix"
