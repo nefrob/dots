@@ -68,6 +68,5 @@ disabled = true
 
 [python]
 # default 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-# format = 'via [${symbol}${pyenv_prefix}(\($virtualenv\) )]($style)'
-# symbol = " "
-disabled = true
+format = 'via [${symbol}(\($virtualenv\) )]($style)'
+symbol = " "
