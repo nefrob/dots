@@ -2,9 +2,10 @@
 fd = "latest"
 fzf = "latest"
 ripgrep = "latest"
-node = '24'
+node = "24.14.0"
 python = '3.14'
 uv = "latest"
+"cargo:just-lsp" = "latest"
 
 [env]
 # Don't set this globally, since it can cause issues with python path
